@@ -1,18 +1,16 @@
-alias termieter='cd ~/.termieter'
-alias termietere='cd ~/.termieter; vim .'
-
-alias vime='cd ~/.vim; vim .'
-
-alias reload!='. ~/.bash_profile'
-
 # paths
 ################################################################################################################
+alias projects='cd ~/Doucments/PROJECTS/'
+alias own='cd ~/Documents/OWN_PROJECTS/'
+alias temp='cd ~/Documents/TEMP/'
+alias expo='cd ~/Documents/EXPORTS/'
+alias files='cd ~/Documents/PROX_FILES/'
+alias repo='cd ~/Documents/REPO/'
 
-alias repos='cd ~/Dropbox/Work/repos/'
-alias dev='cd ~/Dropbox/Work/devel/'
-alias clients='cd ~/Dropbox/Work/clients/'
-alias projects='cd ~/Documents/Projects/'
 
+alias reload!='. ~/.bash_profile'
+alias termieter='cd ~/.termieter'
+alias vim='cd ~/.vim'
 ################################################################################################################
 
 alias ..='cd ..'

@@ -13,7 +13,7 @@ _usage() {
  
 Usage:              install.sh -d ['.termieter'] 
  
-Remote Usage:       bash <( curl -s https://raw.github.com/pierot/termieter/master/install.sh ) [-d '.termieter'] 
+Remote Usage:       bash <( curl -s https://raw.github.com/rob-bar/termieter/master/install.sh ) [-d '.termieter'] 
  
 Options: 
   
@@ -80,7 +80,7 @@ if ! $GIT_INSTALLED; then
 fi
 
 if $GIT_INSTALLED; then
-  git clone git://github.com/pierot/termieter.git "$install_dir"
+  git clone git://github.com/rob-bar/termieter.git "$install_dir"
 fi
 
 if [ ! -d "$install_dir" ]; then
