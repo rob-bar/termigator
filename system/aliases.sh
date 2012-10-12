@@ -9,9 +9,10 @@ alias repo='cd ~/Documents/REPO/'
 
 ################################################################################################################
 alias mkassets='mkdir css img font download js img/layout img/icon js/lib css/lib'
+
 ################################################################################################################
 alias reload!='. ~/.bash_profile'
-alias termieter='cd ~/.termieter'
+alias termigator='cd ~/.termieter'
 
 ################################################################################################################
 alias vimconf='cd ~/.vim'
@@ -23,6 +24,7 @@ alias ...='cd .. ; cd ..'
 alias ls='ls $LS_OPT' # long list, excludes dot files
 alias ll='ls $LS_OPT -GlA' # long list all, includes dot files
 alias l='ls $LS_OPT -loAF'
+alias md='mkdir'
 alias cwd='pwd | pbcopy' # copy current working directory to clipboard
 
 ################################################################################################################

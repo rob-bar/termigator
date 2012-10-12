@@ -9,6 +9,8 @@ alias glui='gitk --all'
 
 # SETTING TO AND REMOVING FROM STAGING AREA
 alias ga='git add'
+alias gai='git add -i'
+alias gap='git add -p'
 alias gaall='git add *'
 alias grm='git rm'
 alias grmall='git rm --cached *'
