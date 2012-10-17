@@ -1,3 +1,6 @@
+# VIEW THIS FILE
+alias algit='cat ~/.termieter/git/aliases.sh'
+
 # STATUSSES AND LOGS
 alias gst='git status'
 alias gl='git log'

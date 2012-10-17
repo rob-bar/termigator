@@ -1,3 +1,6 @@
+# VIEW THIS FILE
+alias aloil='cat ~/.termieter/oil/aliases.sh'
+
 # GENERATING
 alias ocp='oil create blog'
 alias ogmo='oil g model'

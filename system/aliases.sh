@@ -1,3 +1,6 @@
+# VIEW THIS FILE
+alias alsys='cat ~/.termieter/system/aliases.sh'
+
 # paths
 ################################################################################################################
 alias projects='cd ~/Documents/PROJECTS/'
@@ -56,3 +59,5 @@ alias ssh='echo "» ssh-host-color-iterm"; ~/.termieter/system/functions/ssh-hos
 
 ################################################################################################################
 alias codekit='open -a ~/Applications/CodeKit.app $(pwd)';
+
+################################################################################################################
