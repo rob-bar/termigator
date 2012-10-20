@@ -132,6 +132,6 @@ PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${DIR:0:11} = "/Volumes/data
 
 # PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 27 ]; then CurDir=${DIR:0:10}...${DIR:${#DIR}-10}; else CurDir=$DIR; fi;' 
 
-PS1="\[\033]0;\${DIR:${#DIR}-12}\007$green$(parse_ruby_version)$reset_color$red\u $SEP$reset_color$blue\$CurDir $cyan\$(scm_prompt_info)$reset_color$SEP$normal"
+PS1="\[\033]0;\${DIR:${#DIR}-12}\007$red\u @ $green\h: $SEP$reset_color$blue\$PWD $reset_color$white\$(scm_prompt_info)$reset_color$green$SEP$normal"
 PS1="\[\033[G\]$PS1" # http://jonisalonen.com/2012/your-bash-prompt-needs-this/?utm_source=hackernewsletter&utm_medium=email
 
