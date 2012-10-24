@@ -27,7 +27,6 @@ alias ...='cd .. ; cd ..'
 alias ls='ls $LS_OPT' # long list, excludes dot files
 alias ll='ls $LS_OPT -GlA' # long list all, includes dot files
 alias l='ls $LS_OPT -loAF'
-alias md='mkdir'
 alias cwd='pwd | pbcopy' # copy current working directory to clipboard
 
 ################################################################################################################
@@ -58,6 +57,11 @@ alias trash='mv "$@" ~/.Trash/'
 alias ssh='echo "» ssh-host-color-iterm"; ~/.termieter/system/functions/ssh-host-color-iterm'
 
 ################################################################################################################
-alias codekit='open -a ~/Applications/CodeKit.app $(pwd)';
+alias codekit='open -a ~/Applications/CodeKit.app $(pwd)'
+# Show hidden files in finder
+alias showhiddenfiles='defaults write com.apple.Finder AppleShowAllFiles TRUE; killall Finder'
+
+# Hide hidden files in finder
+alias hidehiddenfiles='defaults write com.apple.Finder AppleShowAllFiles FALSE; killall Finder'
 
 ################################################################################################################

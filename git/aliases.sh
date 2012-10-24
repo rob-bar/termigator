@@ -8,6 +8,7 @@ alias gls='git log --stat'
 alias glo='git log --oneline'
 alias glg='git log --graph'
 alias glogad='git log --oneline --graph --all --decorate'
+alias glogap='git log --oneline --graph --all --pretty=format:"%C(yellow)%h%Creset %Cblue%cn%Creset %s %Cred%cr%Creset"'
 alias glui='gitk --all'
 
 # SETTING TO AND REMOVING FROM STAGING AREA
