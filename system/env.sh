@@ -17,8 +17,6 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 export PATH="/usr/local/share/python:$PATH"
 
-export PATH="$HOME/.termieter/scripts:$PATH" # Custom scripts 
-
 export PATH
 
 ################################################################################################################

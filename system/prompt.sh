@@ -99,7 +99,7 @@ function git_prompt_info {
 
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
 
-  echo -e "$SCM_GIT_CHAR${ref#refs/heads/}$state"
+  echo -e "$SCM_GIT_CHAR$(vcprompt -f '%b %m%u')$state"
 }
 
 function svn_prompt_info {
