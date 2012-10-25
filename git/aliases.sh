@@ -18,6 +18,7 @@ alias gap='git add -p'
 alias gaall='git add *'
 alias grm='git rm'
 alias grmall='git rm --cached *'
+alias gcp='git cherry-pick'
 
 # (LOCAL REPO CHANGING) COMMITTING BRANCHING DIFFING & CHECKOUTING
 alias gc='git commit'

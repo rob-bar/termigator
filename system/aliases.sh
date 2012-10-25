@@ -22,12 +22,11 @@ alias vimconf='cd ~/.vim'
 alias v='vim .'
 
 ################################################################################################################
-alias ..='cd ..'
-alias ...='cd .. ; cd ..'
 alias ls='ls $LS_OPT' # long list, excludes dot files
 alias ll='ls $LS_OPT -GlA' # long list all, includes dot files
 alias l='ls $LS_OPT -loAF'
 alias cwd='pwd | pbcopy' # copy current working directory to clipboard
+alias md='mkdir'
 
 ################################################################################################################
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'" # Get readable list of network IPs

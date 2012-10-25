@@ -1,6 +1,14 @@
 # Create a new directory and enter it
-md() {
++() {
   mkdir -p "$@" && cd "$@"
+}
+
+-() {
+	i=$1
+	while [ $i -gt 0 ]; do
+		cd ..
+		let i--
+	done
 }
 
 # Copy your public ssh key to remote server for password-less login
