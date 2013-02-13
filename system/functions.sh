@@ -37,3 +37,16 @@ function host-dropbox() {
 function listf () {
   cat "$HOME/.termieter/system/functions.sh"
 }
+
+# google something
+function google() {
+  read F1
+  F=`echo $F1 | sed s/\ /+/g`
+
+  open "http://google.com/search?q=$F"
+}
+
+#open hipchat
+function hipchat() {
+  open "https://proximitybbdo.hipchat.com/chat"
+}
