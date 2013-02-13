@@ -56,7 +56,7 @@ background_cyan="\[\e[46m\]"
 background_white="\[\e[47m\]"
 
 normal="\[\e[00m\]"
-reset_color="\[\e[39m\]"
+
 
 function scm {
   if [[ -d .git ]]; then SCM=$GIT
@@ -89,19 +89,19 @@ function parse_ruby_version {
   # fi
   echo "`rbenv version | sed -e 's/ .*//'` $SEP"
 }
+if [[ $CURRENT_SHELL == 'bash' ]]; then
+  function git_prompt_info {
+    if [[ -n $(git status -s 2> /dev/null |grep -v ^# |grep -v "working directory clean") ]]; then
+      state=$SCM_THEME_PROMPT_DIRTY
+    else
+      state=$SCM_THEME_PROMPT_CLEAN
+    fi
 
-function git_prompt_info {
-  if [[ -n $(git status -s 2> /dev/null |grep -v ^# |grep -v "working directory clean") ]]; then
-    state=$SCM_THEME_PROMPT_DIRTY
-  else
-    state=$SCM_THEME_PROMPT_CLEAN
-  fi
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
 
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-
-  echo -e "$SCM_GIT_CHAR$(vcprompt -f '%b %m%u')$state"
-}
-
+    echo -e "$SCM_GIT_CHAR$(vcprompt -f '%b %m%u')$state"
+  }
+fi
 function svn_prompt_info {
   if [[ -n $(svn status 2> /dev/null) ]]; then
     state=$SCM_THEME_PROMPT_DIRTY
@@ -128,9 +128,12 @@ function hg_prompt_info() {
   echo -e "$SCM_HG_CHAR$branch:${changeset#*:}$state"
 }
 
-PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${DIR:0:11} = "/Volumes/data" ]; then DIR=${DIR:11:${#DIR}-11}; fi; if [ ${#DIR} -gt 26 ]; then CurDir=${DIR:0:10}..${DIR:${#DIR}-13}; else CurDir=$DIR; fi;' 
+if [[ $CURRENT_SHELL == 'bash' ]]; then
+  reset_color="\[\e[39m\]"
+  PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${DIR:0:11} = "/Volumes/data" ]; then DIR=${DIR:11:${#DIR}-11}; fi; if [ ${#DIR} -gt 26 ]; then CurDir=${DIR:0:10}..${DIR:${#DIR}-13}; else CurDir=$DIR; fi;'
 
-# PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 27 ]; then CurDir=${DIR:0:10}...${DIR:${#DIR}-10}; else CurDir=$DIR; fi;' 
-# PS1="\[\033]0;\${DIR:${#DIR}-12}\007$green$(parse_ruby_version)$reset_color$red\u $SEP$reset_color$blue\$CurDir $cyan\$(scm_prompt_info)$reset_color$SEP$normal"
-PS1="\[\033]0;\${DIR:${#DIR}-12}\007$red\u @ $green\h: $SEP$reset_color$blue\$PWD $reset_color$white\$(scm_prompt_info)$reset_color$green$SEP$normal"
-PS1="\[\033[G\]$PS1" # http://jonisalonen.com/2012/your-bash-prompt-needs-this/?utm_source=hackernewsletter&utm_medium=email
+  # PROMPT_COMMAND='DIR=`pwd|sed -e "s!$HOME!~!"`; if [ ${#DIR} -gt 27 ]; then CurDir=${DIR:0:10}...${DIR:${#DIR}-10}; else CurDir=$DIR; fi;'
+  # PS1="\[\033]0;\${DIR:${#DIR}-12}\007$green$(parse_ruby_version)$reset_color$red\u $SEP$reset_color$blue\$CurDir $cyan\$(scm_prompt_info)$reset_color$SEP$normal"
+  PS1="\[\033]0;\${DIR:${#DIR}-12}\007$red\u @ $green\h: $SEP$reset_color$blue\$PWD $reset_color$white\$(scm_prompt_info)$reset_color$green$SEP$normal"
+  PS1="\[\033[G\]$PS1" # http://jonisalonen.com/2012/your-bash-prompt-needs-this/?utm_source=hackernewsletter&utm_medium=email
+fi

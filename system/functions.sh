@@ -1,9 +1,11 @@
+#!/bin/sh
+
 # Create a new directory and enter it
-+() {
+function +() {
   mkdir -p "$@" && cd "$@"
 }
 
--() {
+function -() {
 	i=$1
 	while [ $i -gt 0 ]; do
 		cd ..
@@ -49,4 +51,9 @@ function google() {
 #open hipchat
 function hipchat() {
   open "https://proximitybbdo.hipchat.com/chat"
+}
+
+#browse local.dev
+function browse() {
+  open http://local.dev/${PWD##/Users/robbieb/Documents/PROJECTS}$1
 }
