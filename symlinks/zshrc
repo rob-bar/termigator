@@ -7,13 +7,25 @@ export ZSH=$TRM/zsh/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
-
-if [[ $OS == 'OSX' ]]; then
-  ZSH_THEME="intheloop"
-else
-  ZSH_THEME="bira"
-fi
+ZSH_THEME="steeef"
+# Cool themes:
+# af-magic
+# dstufft
+# aussiegeek
+# frisk
+# obraun
+# candy
+# clean
+# dieter
+# dpoggi
+# jonathan
+# kennethreitz
+# kphoen
+# if [[ $OS == 'OSX' ]]; then
+#   ZSH_THEME="intheloop"
+# else
+#   ZSH_THEME="bira"
+# fi
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
