@@ -16,7 +16,12 @@ alias gls='git log --stat'
 alias glo='git log --oneline'
 alias glg='git log --graph'
 alias glogad='git log --oneline --graph --all --decorate'
+# show pretty log with the HASH COMMITTERNAME MESSAGE RELTIME
 alias glogap='git log --oneline --graph --all --pretty=format:"%C(yellow)%h%Creset %Cblue%cn%Creset %s %Cred%cr%Creset"'
+# show pretty log with the HASH COMMITTERNAME MESSAGE ORTIME
+alias glogapd='git log --oneline --graph --all --pretty=format:"%C(yellow)%h%Creset %Cblue%cn%Creset %s %Cred%ci%Creset"'
+# show pretty log of all commits yet to be pushed remotely the HASH COMMITTERNAME MESSAGE ORTIME
+alias globrnp='git log --oneline --branches --not --remotes --pretty=format:"%C(yellow)%h%Creset %Cblue%cn%Creset %s %Cred%ci%Creset"'
 alias glui='gitk --all'
 
 # LOW LEVEL PLUMBING COMMANDS
@@ -43,6 +48,7 @@ alias gcp='git cherry-pick'
 
 # (LOCAL REPO CHANGING) COMMITTING BRANCHING DIFFING & CHECKING OUT
 alias gc='git commit'
+alias gcm='git commit -m'
 alias gb='git branch'
 alias gm='git merge'
 alias gco='git checkout'
