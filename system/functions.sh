@@ -35,11 +35,6 @@ function host-dropbox() {
   ln -s `pwd` "$HOME/Dropbox/Public/www/projects"
 }
 
-# Helper :)
-function listf () {
-  cat "$HOME/.termieter/system/functions.sh"
-}
-
 # google something
 function google() {
   read F1
@@ -53,7 +48,20 @@ function hipchat() {
   open "https://proximitybbdo.hipchat.com/chat"
 }
 
-#browse local.dev
+#browse local.dev or local.own or local.repo
 function browse() {
-  open http://local.dev/${PWD##/Users/robbieb/Documents/PROJECTS}$1
+  if [[ ${PWD} == *PROJECTS* ]]
+  then
+    open http://local.dev/${PWD##/Users/robbieb/Documents/PROJECTS}$1
+  fi
+
+  if [[ ${PWD} == *OWN_PROJECTS* ]]
+  then
+    open http://own.dev/${PWD##/Users/robbieb/Documents/OWN_PROJECTS}$1
+  fi
+
+  if [[ ${PWD} == *REPO* ]]
+  then
+    open http://local.repo/${PWD##/Users/robbieb/Documents/REPO}$1
+  fi
 }

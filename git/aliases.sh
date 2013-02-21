@@ -20,7 +20,7 @@ alias glogad='git log --oneline --graph --all --decorate'
 alias glogap='git log --oneline --graph --all --pretty=format:"%C(yellow)%h%Creset %Cblue%cn%Creset %s %Cred%cr%Creset"'
 # show pretty log with the HASH COMMITTERNAME MESSAGE ORTIME
 alias glogapd='git log --oneline --graph --all --pretty=format:"%C(yellow)%h%Creset %Cblue%cn%Creset %s %Cred%ci%Creset"'
-# show pretty log of all commits yet to be pushed remotely the HASH COMMITTERNAME MESSAGE ORTIME
+# show pretty log of all commits yet to be pushed remotely HASH COMMITTERNAME MESSAGE ORTIME
 alias globrnp='git log --oneline --branches --not --remotes --pretty=format:"%C(yellow)%h%Creset %Cblue%cn%Creset %s %Cred%ci%Creset"'
 alias glui='gitk --all'
 
@@ -49,19 +49,31 @@ alias gcp='git cherry-pick'
 # (LOCAL REPO CHANGING) COMMITTING BRANCHING DIFFING & CHECKING OUT
 alias gc='git commit'
 alias gcm='git commit -m'
+# show local branches
 alias gb='git branch'
+# show remote branches
+alias gbr='git branch -r'
+# show all branches
+alias gba='git branch -a'
 alias gm='git merge'
+# checkout commit
 alias gco='git checkout'
+# checkout commit and make branch
+alias gcob='git checkout -b'
+# checkout and merge while checking out
+alias gcm='git checkout -m'
 alias gd='git diff'
+# Checks difference between added files and last commmit
+alias gdch='git diff --cached HEAD'
 alias gs='git stash'
 
 # REMOTE
-alias gpull='git pull'
-alias gpush='git push'
-alias gpullom='git pull origin master'
-alias gpushom='git push origin master'
-alias gpullod='git pull origin develop'
-alias gpushod='git push origin develop'
+alias gpl='git pull'
+alias gps='git push'
+alias gplom='git pull origin master'
+alias gpsom='git push origin master'
+alias gplod='git pull origin develop'
+alias gpsod='git push origin develop'
 alias gcl='git clone'
 alias gclr='git clone --recursive'
 alias gf='git fetch'

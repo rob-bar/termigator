@@ -9,6 +9,9 @@ alias temp='cd ~/Documents/TEMP/'
 alias expo='cd ~/Documents/EXPORTS/'
 alias files='cd ~/Documents/PROX_FILES/'
 alias repo='cd ~/Documents/REPO/'
+alias engine='cd ~/Documents/REPO/prox_engine'
+alias frontend='cd ~/Documents/REPO/prox_frontend'
+alias joints='cd ~/Documents/REPO/prox_joints'
 
 ################################################################################################################
 alias mkassets='mkdir css img font download js img/layout img/icon js/lib css/lib'
