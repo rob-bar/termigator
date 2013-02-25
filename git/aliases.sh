@@ -27,6 +27,8 @@ alias glui='gitk --all'
 # LOW LEVEL PLUMBING COMMANDS
 # print out a hash its contents
 alias gcfp='git cat-file -p'
+# show unmerged contents' object name in the output
+alias glfs='git ls-files -u'
 # show staged contents' object name in the output
 alias glfs='git ls-files -s'
 # hash a specific file
@@ -47,25 +49,46 @@ alias grmcall='git rm --cached *'
 alias gcp='git cherry-pick'
 
 # (LOCAL REPO CHANGING) COMMITTING BRANCHING DIFFING & CHECKING OUT
+# - COMMITS
 alias gc='git commit'
 alias gcm='git commit -m'
-# show local branches
+alias gcam='git commit --amend'
+
+# - BRANCHES & MERGES
 alias gb='git branch'
 # show remote branches
 alias gbr='git branch -r'
 # show all branches
 alias gba='git branch -a'
 alias gm='git merge'
-# checkout commit
+
+# - CHECKOUT
 alias gco='git checkout'
 # checkout commit and make branch
 alias gcob='git checkout -b'
 # checkout and merge while checking out
-alias gcm='git checkout -m'
+alias gcom='git checkout -m'
+# checkout my files in merge conflict
+alias gcoo='git checkout --ours'
+# checkout other files in merge conflict
+alias gcot='git checkout --theirs'
+
+# - DIFF
 alias gd='git diff'
+# when merge conflict watch difference for current head
+alias gdh='git diff HEAD'
+# when merge conflict watch difference for merging head
+alias gdmh='git diff MERGE_HEAD'
 # Checks difference between added files and last commmit
 alias gdch='git diff --cached HEAD'
+
+# - RESET
+alias grs='git reset --mixed'
+alias grss='git reset --soft'
+alias grsh='git reset --hard'
+
 alias gs='git stash'
+alias grfl='git reflog'
 
 # REMOTE
 alias gpl='git pull'

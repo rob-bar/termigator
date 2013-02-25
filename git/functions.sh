@@ -6,3 +6,7 @@ if [[ $CURRENT_SHELL == 'bash' ]]; then
 
 	# source $TRM/git/functions/git-completion.sh
 fi
+
+function cleangit () {
+	find . -name "*.git*" -print0 | xargs -0 rm -rf;
+}
