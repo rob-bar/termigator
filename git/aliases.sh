@@ -60,6 +60,7 @@ alias gb='git branch'
 alias gbr='git branch -r'
 # show all branches
 alias gba='git branch -a'
+
 alias gm='git merge'
 
 # - CHECKOUT
@@ -87,7 +88,16 @@ alias grs='git reset --mixed'
 alias grss='git reset --soft'
 alias grsh='git reset --hard'
 
+# - STASH
 alias gs='git stash'
+alias gsiu='git stash --include-untracked'
+alias gsp='git stash pop'
+alias gss='git stash show'
+alias gsl='git stash list'
+alias gsa='git stash apply'
+alias gsd='git stash drop'
+
+# - REFLOG
 alias grfl='git reflog'
 
 # REMOTE
