@@ -3,14 +3,19 @@ alias algit='cat ~/.termieter/git/aliases.sh'
 
 # GIT HELP & INIT
 alias gi='git init'
+alias gib='git init --bare'
 alias gh='git help'
 alias ghall='git help --all'
+
+# CONFIG
+alias gcnf='cat .git/config'
 
 # STATUSSES AND LOGS
 alias gst='git status'
 alias gwc='git whatchanged'
 alias gsh='git show'
 alias gshb='git show-branch'
+alias gshr='git show-ref'
 alias gl='git log'
 alias gls='git log --stat'
 alias glo='git log --oneline'
@@ -82,6 +87,8 @@ alias gdh='git diff HEAD'
 alias gdmh='git diff MERGE_HEAD'
 # Checks difference between added files and last commmit
 alias gdch='git diff --cached HEAD'
+# Checks difference between commits, show the names of the files for deployment
+alias gdno='gd --name-only'
 
 # - RESET
 alias grs='git reset --mixed'
@@ -100,16 +107,36 @@ alias gsd='git stash drop'
 # - REFLOG
 alias grfl='git reflog'
 
-# REMOTE
-alias gpl='git pull'
+# - BLAME
+alias gblm='git blame'
+
+# REMOTE MANIPULATIONS
+# - PUSH
 alias gps='git push'
+alias gpsf='git push -f'
 alias gplom='git pull origin master'
-alias gpsom='git push origin master'
 alias gplod='git pull origin develop'
+
+# - PULL
+alias gpl='git pull'
+alias gpsom='git push origin master'
 alias gpsod='git push origin develop'
+
+# - CLONE
 alias gcl='git clone'
 alias gclr='git clone --recursive'
+
+# - FETCH
 alias gf='git fetch'
+
+# - REMOTES
+alias glsrem='git ls-remote'
+alias grema='git remote add'
+alias grems='git remote show'
+alias gremu='git remote update'
+alias gremup='git remote update --prune'
+alias gremp='git remote prune'
+alias gremsu='git remote set-url'
 
 # ARCHIVE EXPORT AND PULL ALL REPOS
 alias pall='find ~/Documents/REPO -type d -name .git | xargs -n 1 dirname | sort | while read line; do echo $line && cd $line && git pull; done'
