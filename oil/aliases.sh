@@ -12,8 +12,8 @@ alias ogs='oil g scaffold'
 
 # REFINING
 alias orm='oil r migrate'
-alias ormup='oil r migrate:up'
-alias ormdown='oil r migrate:down'
+alias ormu='oil r migrate:up'
+alias ormd='oil r migrate:down'
 alias or='oil r'
 
 # TESTING

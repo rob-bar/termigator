@@ -1,5 +1,6 @@
 # OPEN UP SUBLIME TEXT 2
 alias st='subl .'
+alias merc='subl ~/Documents/PROJECTS/site_mercedes_ex_adv/;subl ~/Documents/PROJECTS/site_mercedes_ex_adv/tree.xiki'
 
 # OPEN UP XIKI SUBLIME TEXT 2
 alias stx='subl .;subl *.xiki'

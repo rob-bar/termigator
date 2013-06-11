@@ -12,6 +12,8 @@ alias repo='cd ~/Documents/REPO/'
 alias engine='cd ~/Documents/REPO/prox_engine'
 alias frontend='cd ~/Documents/REPO/prox_frontend'
 alias joints='cd ~/Documents/REPO/prox_joints'
+alias nodehost='cd ~/Documents/OWN_PROJECTS/node/;npm start'
+alias portfolio='cd ~/Documents/OWN_PROJECTS/portfolio_2013'
 
 ################################################################################################################
 alias mkassets='mkdir css img font download js img/layout img/icon js/lib css/lib'
