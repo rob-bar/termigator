@@ -65,3 +65,73 @@ function browse() {
     open http://local.repo/${PWD##/Users/robbieb/Documents/REPO}$1
   fi
 }
+
+function lp() {
+  if [ -z "$1" ]
+  then
+    ls -loFt ~/Documents/PROJECTS/
+  else
+    if [ -z "$2" ]
+    then
+      case "$1"
+      in
+        -p) ls -loFt ~/Documents/PROJECTS/;;
+        -o) ls -loFt ~/Documents/OWN_PROJECTS/;;
+        -r) ls -loFt ~/Documents/REPO/;;
+        -t) ls -loFt ~/Documents/TEMP/;;
+        *) ls -loFt ~/Documents/PROJECTS/;;
+      esac
+    else
+      case "$1"
+      in
+        -p) ls -loFt ~/Documents/PROJECTS/ | head -n $((${2:1} + 1));;
+        -o) ls -loFt ~/Documents/OWN_PROJECTS/ | head -n $((${2:1} + 1));;
+        -r) ls -loFt ~/Documents/REPO/ | head -n $((${2:1} + 1));;
+        -t) ls -loFt ~/Documents/TEMP/ | head -n $((${2:1} + 1));;
+        *) ls -loFt ~/Documents/PROJECTS/ | head -n $((${2:1} + 1));;
+      esac
+    fi
+  fi
+}
+
+function p() {
+  case "$2"
+  in
+    -p) my= `find ~/Documents/PROJECTS/*$1* -depth 0 -type d | head -1`;;
+    -o) my= `find ~/Documents/OWN_PROJECTS/*$1* -depth 0 -type d | head -1`;;
+    -r) my= `find ~/Documents/REPO/*$1* -depth 0 -type d | head -1`;;
+    -t) my= `find ~/Documents/TEMP/*$1* -depth 0 -type d | head -1`;;
+    *) my= `find ~/Documents/PROJECTS/*$1* -depth 0 -type d | head -1`;;
+  esac
+  cd "$my"
+
+  if [ -d .git ]
+  then
+    gst
+  fi
+
+  if [ -d .svn ]
+  then
+    svn status
+  fi
+}
+
+function stxp() {
+  case "$2"
+  in
+    -p) my= `find ~/Documents/PROJECTS/*$1* -depth 0 -type d | head -1`;;
+    -o) my= `find ~/Documents/OWN_PROJECTS/*$1* -depth 0 -type d | head -1`;;
+    -r) my= `find ~/Documents/REPO/*$1* -depth 0 -type d | head -1`;;
+    -t) my= `find ~/Documents/TEMP/*$1* -depth 0 -type d | head -1`;;
+    *) my= `find ~/Documents/PROJECTS/*$1* -depth 0 -type d | head -1`;;
+  esac
+  cd "$my"
+
+  if [ -f "*.xiki" ]
+  then
+    stx
+  else
+    xiki
+    stx
+  fi
+}

@@ -3,7 +3,7 @@ alias alsys='cat ~/.termieter/system/aliases.sh'
 
 # paths
 ################################################################################################################
-alias projects='cd ~/Documents/PROJECTS/'
+alias proj='cd ~/Documents/PROJECTS/'
 alias own='cd ~/Documents/OWN_PROJECTS/'
 alias temp='cd ~/Documents/TEMP/'
 alias expo='cd ~/Documents/EXPORTS/'
@@ -13,7 +13,7 @@ alias engine='cd ~/Documents/REPO/prox_engine'
 alias frontend='cd ~/Documents/REPO/prox_frontend'
 alias joints='cd ~/Documents/REPO/prox_joints'
 alias nodehost='cd ~/Documents/OWN_PROJECTS/node/;npm start'
-alias portfolio='cd ~/Documents/OWN_PROJECTS/portfolio_2013'
+alias portf='cd ~/Documents/OWN_PROJECTS/portfolio_2013'
 
 ################################################################################################################
 alias mkassets='mkdir css img font download js img/layout img/icon js/lib css/lib'
