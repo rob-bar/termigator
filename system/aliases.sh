@@ -30,6 +30,7 @@ alias v='vim .'
 alias ls='ls $LS_OPT' # long list, excludes dot files
 alias ll='ls $LS_OPT -GlA' # long list all, includes dot files
 alias l='ls $LS_OPT -loAF'
+alias lp10='lp -p 10'
 alias cwd='pwd | pbcopy' # copy current working directory to clipboard
 alias md='mkdir'
 
@@ -69,3 +70,5 @@ alias showhiddenfiles='defaults write com.apple.Finder AppleShowAllFiles TRUE; k
 alias hidehiddenfiles='defaults write com.apple.Finder AppleShowAllFiles FALSE; killall Finder'
 
 ################################################################################################################
+alias o='open'
+alias o.='open .'

@@ -20,7 +20,13 @@
   untracked = cyan
 [merge]
   log = true
-	stat = true
+  stat = true
 [core]
-  excludesfile = ~/.gitignore_global
-	editor = subl
+  excludesfile = /Users/robbieb/.gitignore_global
+  editor = subl
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
+[mergetool "sourcetree"]
+  cmd = /Volumes/data/Users/robbieb/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true

@@ -1,40 +1,69 @@
-" ---------------------------------------------------------------------------
-" |                                                                         |
-" |                         Proximity goes Vim!                             |
-" |                                                                         |
-" |                Here you can go crazy, this is your file!                |
-" |                                                                         |
-" ---------------------------------------------------------------------------
+" Bundles
+Bundle "Shougo/neocomplete.vim"
 
-colorscheme molokai
-" set guifont=Monaco:h12
+colorscheme mango
 
-" When moving up/down in wrapped lines, move 'screen' lines instead of
-" physical lines
-" nnoremap j gj
-" nnoremap k gk
-" vnoremap j gj
-" vnoremap k gk
+set background=dark     " you can use `dark` or `light` as your background
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
 
-" map ; to : in normal mode
-nnoremap ; :        
+" :hi CursorLine   guibg=#000000 gui=none
+:hi CursorLineNr term=bold ctermfg=Yellow gui=bold guifg=Yellow
+:hi LineNr       font='monospace 8' guifg=#BCBCBC guibg=#232526
 
-set mouse=a         " Enable mouse in all modes. -> https://bitheap.org/mouseterm/
-set ttymouse=xterm  " Set mouse type to xterm.
+set cursorline
 
-set list!           " show hidden chars
+color mango
 
+syntax on
+
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Highlights erased twice Press Esc
+nmap <ESC> <ESC>;nohlsearch <CR>
+
+" Enable mouse in all modes. -> https://bitheap.org/mouseterm/
+set mouse=a
+
+" Set mouse type to xterm.
+set ttymouse=xterm
+
+" show hidden chars
+" set list!
+
+" Set the shell Vim uses for external commands to bash in such a way that it'll source ~/.bash_profile
+set shell=/bin/bash\ --login
+
+" set ttyscroll=3
+
+" allow multiple pastes of the same content when pasting in visual mode.
+vnoremap p pgvy
+
+" better indent for li and p
 let g:html_indent_tags = 'li\|p'
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" show number of matches after a search
+nmap ,c :%s///gn<cr>
 
 " Clean Dreamweaver fuck ups
 map <leader>q :%s/\v(\w)(:)(\S)/\1\2 \3/g<cr>
 
-let g:SuperTabDefaultCompletionType = "<c-p>"
-
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
 
-" Extra syntax highlighting
-au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+" Syntax coloring lines that are too long just slows down the world
+set synmaxcol=256
+
+" Max line width
+" set tw=80
+" set textwidth=80
+" set wrap
+" set linebreak
+" set showbreak=>>
+
+" Highlight everyting that is longer than 80 chars
+highlight OverLength ctermbg=16 ctermfg=41 guibg=#292929
+match OverLength /\%81v.*/
+let c_space_errors=1

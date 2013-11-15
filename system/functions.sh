@@ -94,6 +94,10 @@ function lp() {
   fi
 }
 
+function i() {
+  file -b `find . -name $1`;
+}
+
 function p() {
   case "$2"
   in

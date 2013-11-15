@@ -41,7 +41,7 @@ alias glui='gitk --all'
 # print out a hash its contents
 alias gcfp='git cat-file -p'
 # show unmerged contents' object name in the output
-alias glfs='git ls-files -u'
+alias glfu='git ls-files -u'
 # show staged contents' object name in the output
 alias glfs='git ls-files -s'
 # hash a specific file
@@ -73,6 +73,10 @@ alias gb='git branch'
 alias gbr='git branch -r'
 # show all branches
 alias gba='git branch -a'
+# delete branche
+alias gbd='git branch -d'
+# force delete branche
+alias gbD='git branch -D'
 
 alias gm='git merge'
 
@@ -82,6 +86,8 @@ alias gco='git checkout'
 alias gcob='git checkout -b'
 # checkout and merge while checking out
 alias gcom='git checkout -m'
+# checkout all files that you changed (so discarding all changes)
+alias gcof='git checkout -f'
 # checkout my files in merge conflict
 alias gcoo='git checkout --ours'
 # checkout other files in merge conflict
@@ -100,24 +106,25 @@ alias gdno='gd --name-only'
 
 # - RESET
 alias grs='git reset'
+alias grshead='git reset HEAD'
 alias grsm='git reset --mixed'
 alias grss='git reset --soft'
 alias grsh='git reset --hard'
 
 # - STASH
 alias gs='git stash'
-alias gsiu='git stash --include-untracked'
 alias gsp='git stash pop'
 alias gss='git stash show'
 alias gsl='git stash list'
 alias gsa='git stash apply'
 alias gsd='git stash drop'
+alias gsiu='git stash --include-untracked'
 
 # - REFLOG
 alias grfl='git reflog'
 
 # - BLAME
-alias gblm='git blame'
+alias gbl='git blame'
 
 # REMOTE MANIPULATIONS
 # - PUSH
@@ -146,6 +153,17 @@ alias gremu='git remote update'
 alias gremup='git remote update --prune'
 alias gremp='git remote prune'
 alias gremsu='git remote set-url'
+
+# - SUBMODULES
+alias gsuba='git submodule add'
+alias gsubs='git submodule status'
+alias gsubi='git submodule init'
+alias gsubu='git submodule update'
+alias gsubsu='git submodule summary'
+
+# - GIT SVN
+alias gsvn='git svn'
+alias gsvncl='git svn clone'
 
 # ARCHIVE EXPORT AND PULL ALL REPOS
 alias pall='find ~/Documents/REPO -type d -name .git | xargs -n 1 dirname | sort | while read line; do echo $line && cd $line && git pull; done'
