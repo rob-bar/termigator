@@ -130,13 +130,16 @@ alias gbl='git blame'
 # - PUSH
 alias gps='git push'
 alias gpsf='git push -f'
-alias gplom='git pull origin master'
-alias gplod='git pull origin develop'
+alias gpsom='git push origin master'
+alias gpsod='git push origin develop'
+alias gpsos='git push origin staging'
 
 # - PULL
 alias gpl='git pull'
-alias gpsom='git push origin master'
-alias gpsod='git push origin develop'
+alias gplom='git pull origin master'
+alias gplod='git pull origin develop'
+alias gplos='git pull origin staging'
+
 
 # - CLONE
 alias gcl='git clone'

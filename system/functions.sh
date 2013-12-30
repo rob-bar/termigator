@@ -139,3 +139,15 @@ function stxp() {
     stx
   fi
 }
+
+function fconf() {
+  case "$1"
+  in
+    -d) my='development';;
+    -p) my='production';;
+    -s) my='staging';;
+    -t) my='testing';;
+    *) my='development';;
+  esac
+  cat "$(find . -name fuel -type d | head -n 1)/app/config/$my"/*
+}
